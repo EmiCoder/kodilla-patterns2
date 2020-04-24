@@ -13,8 +13,8 @@ public class Mentor implements Observer {
     }
 
     @Override
-    public void update(TasksRecord tasksRecord) {
-        System.out.println(mentorName + " has new message in record " + tasksRecord.getName() + ", total " + tasksRecord.getTasks().size() + ((tasksRecord.getTasks().size() > 1) ? " record" : " records"));
+    public void update(StudentRecord studentRecord) {
+        System.out.println(mentorName + " has new message in record " + studentRecord.getName() + ", total " + studentRecord.getTasks().size() + ((studentRecord.getTasks().size() > 1) ? " record" : " records"));
         updateCount++;
     }
 }

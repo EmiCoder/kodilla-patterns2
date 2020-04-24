@@ -8,28 +8,28 @@ public class TasksRecordUserTestSuite {
 
     @Test
     public void testUpdate() {
-        TasksRecord record_1 = new Student_1();
-        TasksRecord record_2 = new Student_2();
+        StudentRecord johnSmith = new StudentRecord("John Smith");
+        StudentRecord alanBaldwin = new StudentRecord("Alan Baldwin");
 
         Mentor mentor_1 = new Mentor("Adam Nowak");
         Mentor mentor_2 = new Mentor("Anna Bykowska");
 
-        record_1.registerObserver(mentor_1);
-        record_1.registerObserver(mentor_2);
+        johnSmith.registerObserver(mentor_1);
+        johnSmith.registerObserver(mentor_2);
 
-        record_2.registerObserver(mentor_2);
+        alanBaldwin.registerObserver(mentor_2);
 
-        record_1.addTask(new Task("Prepare TaskController"));
-        record_1.addTask(new Task("Check the spec."));
-        record_1.addTask(new Task("Prepare the tests"));
-        record_2.addTask(new Task("Read the documentation"));
-        record_2.addTask(new Task("Refactor the ProductClass"));
+        johnSmith.addTask(new Task("Prepare TaskController"));
+        johnSmith.addTask(new Task("Check the spec."));
+        johnSmith.addTask(new Task("Prepare the tests"));
+        alanBaldwin.addTask(new Task("Read the documentation"));
+        alanBaldwin.addTask(new Task("Refactor the ProductClass"));
 
         assertEquals(3, mentor_1.getUpdateCount());
         assertEquals(5, mentor_2.getUpdateCount());
-        assertEquals(2, record_1.getObservers().size());
+        assertEquals(2, johnSmith.getObservers().size());
 
-        record_1.removeObserver(mentor_1);
-        assertEquals(1, record_1.getObservers().size());
+        johnSmith.removeObserver(mentor_1);
+        assertEquals(1, johnSmith.getObservers().size());
     }
  }

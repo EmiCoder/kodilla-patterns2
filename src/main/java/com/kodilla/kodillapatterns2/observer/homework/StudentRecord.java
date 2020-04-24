@@ -9,13 +9,13 @@ import java.util.List;
 
 
 @Getter
-public class TasksRecord implements Observable{
+public class StudentRecord implements Observable{
 
     private final List<Observer> observers;
     private final List<Task> tasks;
     private final String name;
 
-    public TasksRecord(String name) {
+    public StudentRecord(String name) {
         this.tasks = new ArrayList<>();
         this.observers = new ArrayList<>();
         this.name = name;
