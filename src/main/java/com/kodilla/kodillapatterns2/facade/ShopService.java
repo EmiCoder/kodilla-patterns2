@@ -65,12 +65,13 @@ public class ShopService {
                 .filter(o-> o.getOrderId().equals(orderId)).iterator();
 
         while (orderIterator.hasNext()) {
-            if (orderIterator.next().isPaid()) {
+            Order theOrder = orderIterator.next();
+            if (theOrder.isPaid()) {
                 return true;
             } else {
                 Random generator = new Random();
-                orderIterator.next().setPaid(generator.nextBoolean());
-                return orderIterator.next().isPaid();
+                theOrder.setPaid(generator.nextBoolean());
+                return theOrder.isPaid();
             }
         } return false;
     }

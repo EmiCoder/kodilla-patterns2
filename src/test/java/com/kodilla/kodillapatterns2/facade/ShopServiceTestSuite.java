@@ -41,9 +41,7 @@ public class ShopServiceTestSuite {
     public void testShopServiceSubmitOrder() {
 
         long orderId = shopService.openOrder(1L);
-
         System.out.println("Registering new order, ID: " + orderId);
-
         if (orderId > 0) {
             shopService.addItem(orderId, 10L, 2);
             System.out.println("Adding item: 10, 2 pcs");
@@ -83,4 +81,6 @@ public class ShopServiceTestSuite {
             System.out.println("Access denied. User is not authenticated.");
         }
     }
+
 }
+
